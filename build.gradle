@@ -3,7 +3,7 @@
  */
 
 plugins {
-    id 'java'
+    id 'application'
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
@@ -19,9 +19,9 @@ dependencies {
     testImplementation 'junit:junit:3.8.1'
 }
 
-group = 'com.github.mschmiudt42.cli'
+group = 'com.github.mschmiudt42.cli.cat'
 version = '1.0-SNAPSHOT'
-description = 'clidemo'
+description = 'cat'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 
@@ -29,8 +29,7 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-jar {
-    manifest {
-        attributes 'Main-Class': 'com.github.mschmiudt42.cli.App'
-    }
+application {
+    // Define the main class for the application.
+    mainClass = 'com.github.mschmiudt42.cli.cat.App'
 }

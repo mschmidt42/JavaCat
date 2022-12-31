@@ -1,4 +1,4 @@
-package com.github.mschmiudt42.cli;
+package com.github.mschmiudt42.cli.cat;
 
 import java.util.concurrent.Callable;
 
@@ -9,8 +9,8 @@ import picocli.CommandLine.Command;
  * Hello world!
  *
  */
-@Command(name = "clidemo", mixinStandardHelpOptions = true, version = "clidemo 0.1",
-	description = "just a demo.")
+@Command(name = "cat", mixinStandardHelpOptions = true, version = "cat 0.1",
+	description = "cat")
 public class App  implements Callable<Integer> 
 {
     public static void main( String[] args )
