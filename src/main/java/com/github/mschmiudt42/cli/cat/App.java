@@ -28,8 +28,14 @@ public class App  implements Callable<Integer>
     @Option( names = {"-b", "--number-nonblank"}, description="number nonempty output lines, overrides -n")
     boolean numberNonblank = false;
 
+    @Option( names = {"-E", "--show-ends"}, description="display $ at end of each line")
+    boolean showEnds = false;
+
+    @Option( names = {"-s", "--squeeze-blank"}, description=" suppress repeated empty output lines")
+    boolean squeezeBlanks = false;
 
     private long lineNr = 0;
+    private boolean lastLineEmpty = false;
 
     public static void main( String[] args )
     {
@@ -55,7 +61,22 @@ public class App  implements Callable<Integer>
         stream.forEach(l -> println(l));
     }
 
+
     public void println(String line){
+        if(squeezeBlanks){
+            if(line.isEmpty()){
+                if(lastLineEmpty){
+                    return;
+                } else {
+                    lastLineEmpty=true;
+                }
+            } else {
+                lastLineEmpty=false;
+            }
+        }
+        if(showEnds){
+            line += "$";
+        }
         if(numberNonblank){
             if(line.trim().length()>0){
                 lineNr++;
