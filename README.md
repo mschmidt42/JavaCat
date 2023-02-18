@@ -1,13 +1,22 @@
-# cat 
+# JavaCat
 
 Cat implemenmtation in Java
 
+## Build
 
+with maven:
+```
+mvn package
+```
+
+with gradle
+```
+gradle shadowJar
+```
 
 
 
 ## the unix cat help page
-
 
 ```
 SYNOPSIS
