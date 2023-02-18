@@ -8,8 +8,8 @@ Cat implemenmtation in Java
 
 ## the unix cat help page
 
-none of these switches is implemented right now.
 
+```
 SYNOPSIS
        cat [OPTION]... [FILE]...
 DESCRIPTION
@@ -29,6 +29,6 @@ NOT IMPLEMENTED:
        -T, --show-tabs  display TAB characters as ^I
        -u     (ignored)
        -v, --show-nonprinting  use ^ and M- notation, except for LFD and TAB
-
+```
 
 
